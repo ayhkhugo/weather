@@ -1,0 +1,55 @@
+<html>
+<head>
+  <title>Registration</title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  
+ 
+    <style>
+        th{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+  <div style="margin:100px;">
+    <nav class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li class="active">
+        <a href="/registirtor">Registration</a>
+      </li>
+      <li>
+        <a href="/login">Login</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+    <div class="jumbotron"  style="padding:40px;">
+        <h1>Registration</h1>
+<form id="form" method="post" action="registry" enctype="multipart/form-data">
+    <table class="table">
+	<tr><th>User Name :
+        </th>
+        <td><input type="text" name="username" id="username"/>
+        </td>
+    </tr>
+	<tr><th>Password :
+        </th>
+        <td><input type="password" name="password" id="password"/>
+        </td>
+    </tr>
+	<tr><th>Email :
+        </th>
+        <td><input type="text" name="email" id="email"/>
+        </td>
+    </tr>
+        <tr><td colspan="2" style='text-align:center;font-size:20px;'><input  class="btn btn-primary btn-lg" type="submit" value="Submit"></td></tr>
+        </table>
+</form>
+</div>
+</body>
+</html>
