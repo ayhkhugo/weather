@@ -2,6 +2,8 @@
 /**
  * Module dependencies.
  */
+ 
+ //express routing
 
 var express = require('express');
 var user = require('./routes/user');
@@ -36,7 +38,9 @@ app.post('/registry', user.registry);
 app.get('/login', user.login_temp);
 app.post('/login', user.login);
 app.get('/search', user.search_tmp);
+//assignment2 api
 app.get('/api', api.api);
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

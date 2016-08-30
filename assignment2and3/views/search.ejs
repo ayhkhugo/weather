@@ -14,12 +14,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     
   <script>
+  
+  //angular js 
     var app = angular.module('searchApp', []).controller('MyModuleWeather', function($scope, $http, $log) {
   
     $scope.city = 'Hong Kong';
     
+    
+    //call assignment api
     $scope.change = function() {
-      var url = 'https://assignment-ayhkhugo.c9users.io/api';
+      var url = 'https://cu305cde2016.herokuapp.com/api';
       $http.jsonp(url, {
         params: {
           search: $scope.city,
@@ -37,6 +41,7 @@
 
    
     $scope.change();
+   //date time format
     $scope.todate = function (ts){
       var tdate = new Date(ts*1000);
       return tdate.toString();
@@ -52,16 +57,14 @@
       
 
   <div class="container">
-    <ul class="nav navbar-nav">
+    <ul class="nav">
       <li>
         <a href="/">Home</a>
       </li>
       <li>
         <a href="/registry">Registration</a>
       </li>
-      <li>
-        <a href="/login">Login</a>
-      </li>
+     
       <li class="active">
         <a href="/search">Search</a>
       </li>
@@ -69,14 +72,15 @@
 
   </div>
 </nav>
-    <div class="jumbotron"  style="padding:40px;">
+    <div class="divider"  style="padding:40px;">
       
           <div ng-controller="MyModuleWeather">
   <label for="city">City</label>
   <input type="text" ng-model="city" />
   </br>
-  <button ng-click="change()">Change</button>
+  <button ng-click="change()" class="btn-group">Change</button>
   
+  <!-- record looping -->
   
   <div data-ng-repeat='weather in weathers'>
     Weather : {{ weather.weather[0].description }}<br>
